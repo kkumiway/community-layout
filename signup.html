@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="signup-container">
+        <h1>회원가입</h1>
+
+        <!-- 프로필 사진 -->
+        <div class="profile-pic">
+            <input type="file" id="profile-pic-input">
+            <img id="profile-pic-preview" src="" alt="프로필 이미지 미리보기" class="hidden">
+            <button id="remove-pic" class="hidden">프로필 이미지 삭제</button>
+        </div>
+
+        <!-- 이메일 입력 -->
+        <label for="email">이메일</label>
+        <input type="email" id="email" placeholder="example@example.com">
+        <p id="email-helper" class="helper-text">*이메일을 입력해주세요</p>
+        <p id="email-error" class="error-message"></p>
+
+        <!-- 비밀번호 입력 -->
+        <label for="password">비밀번호</label>
+        <input type="password" id="password" placeholder="비밀번호 입력">
+        <p id="password-error" class="error-message"></p>
+
+        <!-- 비밀번호 확인 입력 -->
+        <label for="password-confirm">비밀번호 확인</label>
+        <input type="password" id="password-confirm" placeholder="비밀번호 확인">
+        <p id="password-confirm-error" class="error-message"></p>
+
+        <!-- 닉네임 입력 -->
+        <label for="nickname">닉네임</label>
+        <input type="text" id="nickname" maxlength="10" placeholder="닉네임 입력">
+        <p id="nickname-error" class="error-message"></p>
+
+        <!-- 회원가입 버튼 -->
+        <button id="signup-btn" disabled>회원가입</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
