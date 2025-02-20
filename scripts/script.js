@@ -19,6 +19,16 @@ function validatePassword(password) {
     return regex.test(password);
 }
 
+// 닉네임 검사 (10자 이하)
+function validateNickname(nickname) {
+    return nickname.length <= 10;
+}
+
+// 비밀번호 확인이 비밀번호와 일치하는지 검사
+function validatePasswordConfirmation(password, confirmPassword) {
+    return password === confirmPassword;
+}
+
 // 입력값 변경 시 유효성 검사 수행
 function validateInputs() {
     const email = emailInput.value.trim();
