@@ -16,11 +16,14 @@
         <h1>회원가입</h1>
 
         <!-- 프로필 사진 -->
-        <div class="profile-pic">
-            <input type="file" id="profile-pic-input">
-            <img id="profile-pic-preview" src="" alt="프로필 이미지 미리보기" class="hidden">
-            <button id="remove-pic" class="hidden">프로필 이미지 삭제</button>
-        </div>
+        <div class="profile-container">
+            <label for="profile-pic" class="profile-pic-label">
+              <input type="file" id="profile-pic" accept="image/*" onchange="previewImage(event)" />
+              <div id="image-preview" class="image-preview">
+                <span>+</span>
+              </div>
+            </label>
+          </div>
 
         <!-- 이메일 입력 -->
         <label for="email">이메일</label>
