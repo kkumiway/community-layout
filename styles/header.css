@@ -1,0 +1,37 @@
+/* Header 기본 스타일 */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 0 0px;
+    z-index: 1000;
+}
+
+/* 헤더 타이틀 스타일 */
+.header-title {
+    color: black;
+    font-size: 18px;
+    margin: 0;
+}
+
+/* 헤더 버튼 스타일 */
+.header-button {
+    position: absolute;
+    left: -200px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: black;
+    cursor: pointer;
+    padding: 5px;
+    margin: 1px;
+    box-sizing: border-box;
+}
+

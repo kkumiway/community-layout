@@ -19,16 +19,6 @@ function validatePassword(password) {
     return regex.test(password);
 }
 
-// 닉네임 검사 (10자 이하)
-function validateNickname(nickname) {
-    return nickname.length <= 10;
-}
-
-// 비밀번호 확인이 비밀번호와 일치하는지 검사
-function validatePasswordConfirmation(password, confirmPassword) {
-    return password === confirmPassword;
-}
-
 // 입력값 변경 시 유효성 검사 수행
 function validateInputs() {
     const email = emailInput.value.trim();
@@ -37,7 +27,7 @@ function validateInputs() {
 
     // 이메일 유효성 검사
     if (!validateEmail(email)) {
-        emailError.textContent = "올바른 이메일 주소를 입력해주세요.";
+        emailError.textContent = "*올바른 이메일 주소를 입력해주세요.";
         isValid = false;
     } else {
         emailError.textContent = "";
@@ -45,7 +35,7 @@ function validateInputs() {
 
     // 비밀번호 유효성 검사
     if (!validatePassword(password)) {
-        passwordError.textContent = "비밀번호는 8~20자이며, 대문자, 소문자, 숫자, 특수문자를 포함해야 합니다.";
+        passwordError.textContent = "*비밀번호는 8~20자이며, 대문자, 소문자, 숫자, 특수문자를 포함해야 합니다.";
         isValid = false;
     } else {
         passwordError.textContent = "";
