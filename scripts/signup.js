@@ -1,9 +1,16 @@
 // 이메일, 비밀번호 유효성 검사
+const profilePicInput = document.getElementById("profile-pic");
 const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const loginButton = document.getElementById("login-btn");
 
+// 헬퍼 메시지
+const profilePicHelper = document.getElementById("profile-pic-helper");
+const emailHelper = document.getElementById("email-helper");
+const passwordHelper = document.getElementById("password-helper");
+
 // 오류 메시지
+const profilePicError = document.getElementById("profile-pic-error");
 const emailError = document.getElementById("email-error");
 const passwordError = document.getElementById("password-error");
 
@@ -33,19 +40,37 @@ function validatePasswordConfirmation(password, confirmPassword) {
 function validateInputs() {
     const email = emailInput.value.trim();
     const password = passwordInput.value.trim();
+    const profilePic = profilePicInput.value;
     let isValid = true;
 
-    // 이메일 유효성 검사
-    if (!validateEmail(email)) {
-        emailError.textContent = "올바른 이메일 주소를 입력해주세요.";
+    // 프로필 사진 유효성 검사
+    if (!profilePic) {
+        profilePicHelper.textContent = "*프로필 사진을 업로드해주세요.";
+        profilePicHelper.style.display = "block";
         isValid = false;
-    } else {
-        emailError.textContent = "";
+    }else{
+        profilePicHelper.style.display = "none";
+    }
+
+    // 이메일 유효성 검사
+    if (!email) {
+        emailHelper.textContent = "*이메일 주소를 입력해주세요.";
+        emailError.style.display = "none";
+        isValid = false;
+    }else{
+        emailHelper.style.display = "none";
+        if (!validateEmail(email)) {
+            emailError.textContent = "*올바른 이메일 주소를 입력해주세요.";
+            emailError.style.display = "block"; // 오류 메시지 보이기
+            isValid = false;
+        } else {
+            emailError.style.display = "none"; // 오류 메시지 숨기기
+        }
     }
 
     // 비밀번호 유효성 검사
     if (!validatePassword(password)) {
-        passwordError.textContent = "비밀번호는 8~20자이며, 대문자, 소문자, 숫자, 특수문자를 포함해야 합니다.";
+        passwordError.textContent = "*비밀번호는 8~20자이며, 대문자, 소문자, 숫자, 특수문자를 포함해야 합니다.";
         isValid = false;
     } else {
         passwordError.textContent = "";
@@ -77,8 +102,12 @@ function previewImage(event) {
       preview.innerHTML = '<span>+</span>';
     }
   }
-  
+
+// 페이지가 로드되면 validateInputs 실행
+document.addEventListener("DOMContentLoaded", validateInputs);
+
 // 입력 이벤트 리스너 추가
+profilePicInput.addEventListener("input", validateInputs);
 emailInput.addEventListener("input", validateInputs);
 passwordInput.addEventListener("input", validateInputs);
 

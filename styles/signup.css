@@ -36,17 +36,17 @@ input {
 
 
 .helper-text {
-    font-size: 12px;
     color: red;
+    font-size: 12px;
     text-align: left;
+    margin: 3px 8px 10px;
 }
 
 .error-message {
     color: red;
     font-size: 12px;
-    height: 14px;
-    margin: 3px 8px 25px;
     text-align: left;
+    margin: 3px 8px 10px;
 }
 
 button {
@@ -89,6 +89,7 @@ button:disabled {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* 요소들을 세로로 배치 */
   }
   
   .profile-pic-label {
@@ -114,7 +115,7 @@ button:disabled {
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .image-preview img {
