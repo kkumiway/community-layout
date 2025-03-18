@@ -7,27 +7,50 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    padding-top: 100px;  /* 헤더 높이만큼 공간 추가 */
+    padding-top: 60px;  /* 헤더 높이만큼 공간 추가 */
 }
 
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+/* 게시판 안내 문구 스타일 */
+.board-description {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    text-align: center;
 }
 
-/* 게시글 목록 스타일 */
+/* 작성 버튼 스타일 */
+.write-post-btn {
+    align-self: flex-end;  /* 부모 요소에서 오른쪽 끝으로 정렬 */
+    width: 10vw;  /* 버튼 크기 */
+    margin: 20px 0;  /* 위아래 여백 */
+    padding: 10px;
+    background-color: #ACA0EB;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.write-post-btn:hover {
+    background-color: #7F6AEE;
+}
+
+/* 게시글 목록 컨테이너 스타일 */
 .post-list {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 50vw;  /* post-card와 동일한 너비 */
+    align-items: flex-end;  /* 내부 요소를 오른쪽 끝 정렬 */
 }
 
 .post-card {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
+    width: 50vw;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -40,37 +63,42 @@ body {
 .post-header {
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: 24px;
+    font-weight: bold;
     color: #333;
     margin-bottom: 10px;
 }
 
-.post-body {
+.post-info {
+    display: flex;
+    justify-content: space-between;
     font-size: 14px;
-    color: #777;
+    color: #333;
+    margin-bottom: 10px;
 }
 
-.post-content {
-    font-size: 14px;
-    margin-top: 10px;
+/* 작성자 정보 구역 위에 회색 줄 */
+.post-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 20px 0;
+}
+
+/* 작성자 정보 */
+.post-writer {
+    display: flex;
+    align-items: center; /* 프로필 이미지와 텍스트 수직 정렬 */
+    font-size: 16px;
+    font-weight: bold;
     color: #555;
 }
 
-/* 작성 버튼 스타일 */
-.write-post-btn {
-    display: block;
-    width: 200px;
-    margin: 20px auto;
-    padding: 10px;
-    background-color: #7F6AEE;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-}
-
-.write-post-btn:hover {
-    background-color: #6a54c8;
+/* 프로필 이미지 스타일 */
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 13px;
 }
