@@ -14,6 +14,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const postList = document.querySelector(".post-list");
     let page = 1; // 페이지 번호 (데이터 페이징 용)
 
+    // 제목이 20자를 넘으면 '...' 처리
+    function truncateTitle(title, maxLength = 20) {
+        return title.length > maxLength ? title.slice(0, maxLength) + "..." : title;
+    }
+
+    // 숫자 변환 (1000 → 1K, 10000 → 10K, 100000 → 100K)
+    function formatNumber(num) {
+        if (num >= 100000) return Math.floor(num / 1000) + "K";
+        if (num >= 1000) return (num / 1000).toFixed(1).replace(".0", "") + "K";
+        return num.toString();
+    }
+
     // 더미 게시글 데이터 생성 함수
     function createPostCard(post) {
         const postCard = document.createElement("div");
@@ -21,10 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
         postCard.innerHTML = `
             <div class="post-header">
-                <span>${post.title}</span>
+                <span>${truncateTitle(post.title)}</span>
             </div>
             <div class="post-info">
-                <span>좋아요 ${post.likes}  댓글 ${post.comments}  조회수 ${post.views}</span>
+                <span>좋아요 ${formatNumber(post.likes)}  댓글 ${formatNumber(post.comments)}  조회수 ${formatNumber(post.views)}</span>
                 <span>${post.date}</span>
             </div>
             <div class="post-divider"></div>
@@ -42,10 +54,10 @@ document.addEventListener("DOMContentLoaded", function () {
         const posts = [];
         for (let i = 0; i < count; i++) {
             posts.push({
-                title: `제목 ${page * count + i + 1}`,
-                likes: Math.floor(Math.random() * 100),
-                comments: Math.floor(Math.random() * 50),
-                views: Math.floor(Math.random() * 500),
+                title: `20자 이상 될 수도? 있는 제목 ${page * count + i + 1}`,
+                likes: Math.floor(Math.random() * 100000),
+                comments: Math.floor(Math.random() * 5000),
+                views: Math.floor(Math.random() * 500000),
                 date: new Date().toISOString().slice(0, 19).replace("T", " "),
                 author: `작성자 ${page * count + i + 1}`,
             });
