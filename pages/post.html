@@ -18,16 +18,16 @@
         <!-- 작성자 정보 -->
         <div class="post-header">
             <!-- 작성자 정보 (왼쪽 정렬) -->
-            <div class="post-writer-container">
+            <div class="writer-container">
                 <img src="../assets/profile-placeholder.png" alt="프로필 이미지" class="profile-image">
-                <p class="post-writer" id="post-writer">작성자</p>
-                <p class="post-date" id="post-date">2021-00-00 00:00:00</p>
+                <p class="writer" id="post-writer">작성자</p>
+                <p class="date" id="post-date">2021-00-00 00:00:00</p>
             </div>
         
             <!-- 수정, 삭제 버튼 (오른쪽 정렬) -->
             <div class="button-container">
-                <button class="edit-btn" id="edit-btn">수정</button>
-                <button class="delete-btn" id="delete-btn">삭제</button>
+                <button class="edit-btn" id="post-edit-btn">수정</button>
+                <button class="delete-btn" id="post-delete-btn">삭제</button>
             </div>
         </div>
 
@@ -71,19 +71,47 @@
         <!-- 댓글 목록 -->
         <ul id="comment-list">
             <li class="comment">
-                <span class="comment-text">기존 댓글 내용</span>
-                <button class="edit-comment">수정</button>
-                <button class="delete-comment">삭제</button>
+                <!-- 작성자 정보 -->
+                <div class="comment-header">
+                    <!-- 작성자 정보 (왼쪽 정렬) -->
+                    <div class="writer-container">
+                        <img src="../assets/profile-placeholder.png" alt="프로필 이미지" class="profile-image">
+                        <p class="writer" id="comment-writer">작성자</p>
+                        <p class="date" id="comment-date">2021-00-00 00:00:00</p>
+                    </div>
+                
+                    <!-- 수정, 삭제 버튼 (오른쪽 정렬) -->
+                    <div class="button-container">
+                        <button class="edit-btn" id="comment-edit-btn">수정</button>
+                        <button class="delete-btn" id="comment-delete-btn">삭제</button>
+                    </div>
+                </div>
+                <div>
+                    <p class="comment-content" id="comment-content">
+                        댓글 내용이 여기에 표시됩니다. 댓글 내용이 여기에 표시됩니다.댓글 내용이 여기에 표시됩니다.댓글 내용이 여기에 표시됩니다.
+                    </p>
+                </div>
             </li>
         </ul>
     </div>
 
-    <!-- 삭제 확인 모달 -->
-    <div id="modal" class="hidden">
+    <!-- 게시글 삭제 확인 모달 -->
+    <div id="post-delete-modal" class="hidden">
         <div class="modal-content">
-            <p>정말 삭제하시겠습니까?</p>
-            <button id="modal-confirm">확인</button>
-            <button id="modal-cancel">취소</button>
+            <h2>게시글을 삭제하시겠습니까?</h2>
+            <p>삭제한 내용은 복구할 수 없습니다.</p>
+            <button class="modal-cancel-btn" id="post-modal-cancel">취소</button>
+            <button class="modal-confirm-btn" id="post-modal-confirm">확인</button>
+        </div>
+    </div>
+
+    <!-- 댓글 삭제 확인 모달 -->
+    <div id="comment-delete-modal" class="hidden">
+        <div class="modal-content">
+            <h2>댓글을 삭제하시겠습니까?</h2>
+            <p>삭제한 내용은 복구할 수 없습니다.</p>
+            <button class="modal-cancel-btn" id="comment-modal-cancel">취소</button>
+            <button class="modal-confirm-btn" id="comment-modal-confirm">확인</button>
         </div>
     </div>
 
