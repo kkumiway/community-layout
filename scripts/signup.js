@@ -172,6 +172,6 @@ nicknameInput.addEventListener("input", validateInputs);
 signupButton.addEventListener("click", function() {
     if (!signupButton.disabled) {
         alert("회원가입 성공! 로그인 페이지로 이동합니다.");
-        window.location.href = "login.html"; // 게시글 목록 페이지로 이동
+        window.location.href = "login.html"; // 로그인 페이지로 이동
     }
 });

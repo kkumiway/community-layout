@@ -22,7 +22,7 @@ body {
 .write-post-btn {
     align-self: flex-end;  /* 부모 요소에서 오른쪽 끝으로 정렬 */
     width: 10vw;  /* 버튼 크기 */
-    margin: 20px 0;  /* 위아래 여백 */
+    margin: 10px 5px 0;  /* 위아래 여백 */
     padding: 10px;
     background-color: #ACA0EB;
     color: #fff;
@@ -43,7 +43,8 @@ body {
     flex-direction: column;
     gap: 20px;
     width: 50vw;  /* post-card와 동일한 너비 */
-    align-items: flex-end;  /* 내부 요소를 오른쪽 끝 정렬 */
+    align-items: center;  /* 내부 요소를 중앙 정렬 */
+    margin: 0 auto; /* 컨테이너 자체를 중앙 정렬 */
 }
 
 .post-card {
@@ -53,6 +54,7 @@ body {
     width: 50vw;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* 패딩을 너비 안에 포함 */
 }
 
 .post-card:hover {
