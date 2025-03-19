@@ -66,8 +66,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // 댓글 등록 기능
-    commentSubmit.addEventListener("click", function () {
+    // 기존 댓글 등록 이벤트를 별도로 유지
+    commentSubmit.addEventListener("click", addNewComment);
+
+    // 원래의 댓글 등록 기능을 위한 함수
+    function addNewComment() {
         const commentText = commentInput.value.trim();
         if (commentText === "") return;
 
@@ -95,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         newComment.querySelector(".edit-btn").addEventListener("click", function () {
             editComment(newComment);
+            return;
         });
 
         commentList.appendChild(newComment);
@@ -106,27 +110,38 @@ document.addEventListener("DOMContentLoaded", function () {
         let count = parseInt(commentCount.innerText.replace("k", "000"));
         count += 1;
         commentCount.innerText = formatNumber(count);
-    });
+    }
 
-    // 댓글 수정 기능
     function editComment(commentItem) {
-        const commentContent = commentItem.querySelector(".comment-content");
-        const originalText = commentContent.innerText;
-
-        commentInput.value = originalText;
-        commentSubmit.innerText = "댓글 수정";
+        const commentContent = commentItem.querySelector(".comment-content"); // 기존 댓글 내용 가져오기
+        const originalText = commentContent.innerText; // 기존 텍스트 저장
+    
+        commentInput.value = originalText; // 입력창에 기존 댓글 내용 표시
+        commentSubmit.innerText = "댓글 수정"; // 버튼 텍스트 변경
         commentSubmit.disabled = false;
         commentSubmit.style.backgroundColor = "#7F6AEE"; // 활성화 색상
-
-        commentSubmit.onclick = function () {
+    
+        // 기존 이벤트 리스너 제거 (이전 수정 이벤트 중복 방지)
+        commentSubmit.removeEventListener("click", addNewComment);
+        commentSubmit.removeEventListener("click", updateComment);
+    
+        // 수정된 댓글을 업데이트하는 함수
+        function updateComment() {
             if (commentInput.value.trim() !== "") {
-                commentContent.innerText = commentInput.value;
-                commentSubmit.innerText = "댓글 등록";
-                commentInput.value = "";
+                commentContent.innerText = commentInput.value; // 기존 댓글 내용 변경
+                commentInput.value = ""; // 입력창 초기화
+                commentSubmit.innerText = "댓글 등록"; // 버튼 텍스트 원상 복구
                 commentSubmit.disabled = true;
                 commentSubmit.style.backgroundColor = "#ACA0EB"; // 비활성화 색상
+    
+                // 수정 완료 후 다시 댓글 등록 기능으로 복구
+                commentSubmit.removeEventListener("click", updateComment);
+                commentSubmit.addEventListener("click", addNewComment);
             }
-        };
+        }
+    
+        // 새로운 수정 이벤트 리스너 등록
+        commentSubmit.addEventListener("click", updateComment);
     }
 
     // 게시글 삭제 모달에서 일어나는 작용
