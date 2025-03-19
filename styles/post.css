@@ -43,7 +43,7 @@ body {
     flex-direction: column;
     gap: 20px;
     width: 50vw;  /* post-card와 동일한 너비 */
-    align-items: center;  /* 내부 요소를 오른쪽 끝 정렬 */
+    align-items: center;  /* 내부 요소를 중앙 정렬 */
     margin: 0 auto; /* 컨테이너 자체를 중앙 정렬 */
 }
 
