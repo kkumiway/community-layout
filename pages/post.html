@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 상세 조회</title>
+    <link rel="stylesheet" href="../styles/post.css">
+    <link rel="stylesheet" href="../styles/header.css">
+</head>
+<body>
+    <!-- 헤더 영역 -->
+    <div id="header-placeholder"></div>
+
+    <div class="container">
+        <!-- 게시글 제목 -->
+        <h2 id="post-title">게시글 제목</h2>
+
+        <!-- 작성자 정보 -->
+        <div class="post-header">
+            <!-- 작성자 정보 (왼쪽 정렬) -->
+            <div class="post-writer-container">
+                <img src="../assets/profile-placeholder.png" alt="프로필 이미지" class="profile-image">
+                <p class="post-writer" id="post-writer">작성자</p>
+                <p class="post-date" id="post-date">2021-00-00 00:00:00</p>
+            </div>
+        
+            <!-- 수정, 삭제 버튼 (오른쪽 정렬) -->
+            <div class="button-container">
+                <button class="edit-btn" id="edit-btn">수정</button>
+                <button class="delete-btn" id="delete-btn">삭제</button>
+            </div>
+        </div>
+
+        <!-- 구분선 -->
+        <div class="post-divider"></div>
+
+        <!-- 게시글 본문 -->
+        <img src="../assets/profile-placeholder.png" alt="프로필 이미지" class="post-image">
+        <p class="post-content" id="post-content">게시글 내용이 여기에 표시됩니다. 게시글 내용이 여기에 표시됩니다.게시글 내용이 여기에 표시됩니다.게시글 내용이 여기에 표시됩니다.게시글 내용이 여기에 표시됩니다.게시글 내용이 여기에 표시됩니다.게시글 내용이 여기에 표시됩니다.게시글 내용이 여기에 표시됩니다.게시글 내용이 여기에 표시됩니다.</p>
+
+        <!-- 조회수, 좋아요, 댓글 수 -->
+        <div class="post-info-container">
+            <!-- 좋아요 버튼 -->
+            <button class="post-like-count" id="like-btn">
+                <span>500</span>
+                <span class="post-label">좋아요 수</span>
+            </button>
+
+            <!-- 조회수 -->
+            <div class="post-view-count" id="view-count">
+                <span>102k</span>
+                <span class="post-label">조회수</span>
+            </div>
+
+            <!-- 댓글 수 -->
+            <div class="post-comment-count" id="comment-count">
+                <span>12</span>
+                <span class="post-label">댓글 수</span>
+            </div>
+        </div>
+
+        <!-- 구분선 -->
+        <div class="post-divider"></div>
+        
+        <!-- 댓글 입력 -->
+        <div class="comment-input-container">
+            <textarea class="comment-input" id="comment-input" placeholder="댓글을 남겨주세요!"></textarea>
+            <button class="comment-submit-btn" id="comment-submit" disabled>댓글 등록</button>
+        </div>
+
+        <!-- 댓글 목록 -->
+        <ul id="comment-list">
+            <li class="comment">
+                <span class="comment-text">기존 댓글 내용</span>
+                <button class="edit-comment">수정</button>
+                <button class="delete-comment">삭제</button>
+            </li>
+        </ul>
+    </div>
+
+    <!-- 삭제 확인 모달 -->
+    <div id="modal" class="hidden">
+        <div class="modal-content">
+            <p>정말 삭제하시겠습니까?</p>
+            <button id="modal-confirm">확인</button>
+            <button id="modal-cancel">취소</button>
+        </div>
+    </div>
+
+
+    <script src="../scripts/layout.js"></script>
+    <script src="../scripts/post.js"></script>
+</body>
+</html>
