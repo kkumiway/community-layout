@@ -46,6 +46,12 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
+        // 클릭 시 post.html로 이동 (postId를 쿼리 파라미터로 전달)
+        postCard.addEventListener("click", function () {
+            // window.location.href = `post.html?id=${postId}`;
+            window.location.href = `post.html`
+        });
+
         return postCard;
     }
 
