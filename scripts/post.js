@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     // 요소 가져오기
     const likeBtn = document.getElementById("like-btn");
-    const viewCount = document.getElementById("view-count");
-    const commentCount = document.getElementById("comment-count");
+    const viewCount = document.querySelector("#view-count span:first-child");
+    const commentCount = document.querySelector("#comment-count span:first-child");
     const commentInput = document.getElementById("comment-input");
     const commentSubmit = document.getElementById("comment-submit");
     const commentList = document.getElementById("comment-list");
