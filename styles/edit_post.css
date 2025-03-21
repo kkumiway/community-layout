@@ -64,6 +64,15 @@ textarea {
     align-self: flex-start;
 }
 
+/* 본문 이미지 스타일 */
+.preview-image {
+    display: none;
+    width: 95%;
+    object-fit: cover;
+    padding: 10px;
+    box-sizing: border-box; /* 패딩을 너비 안에 포함 */
+}
+
 /* 등록 버튼 스타일 */
 button {
     width: 30%;
