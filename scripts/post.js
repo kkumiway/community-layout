@@ -32,8 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 게시글 수정 버튼 클릭 시 페이지 이동
     postEditBtn.addEventListener("click", function () {
-        alert("게시글 수정 페이지로 이동합니다.");
-        window.location.href = "edit_post.html"; // 게시글 수정 페이지로 이동
+        const postId = new URLSearchParams(window.location.search).get("id"); // 게시글 ID 가져오기
+        const title = encodeURIComponent(document.getElementById("post-title").innerText);
+        const content = encodeURIComponent(document.getElementById("post-content").innerText);
+        const imageSrc = encodeURIComponent(document.querySelector(".post-image").src);
+    
+        // URL에 데이터 추가하여 페이지 이동
+        window.location.href = `edit_post.html?id=${postId}&title=${title}&content=${content}&image=${imageSrc}`;
     });
 
     // 게시글 삭제 버튼 클릭 시 모달 열기
