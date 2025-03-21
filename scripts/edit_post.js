@@ -75,6 +75,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 previewImage.src = e.target.result;
             };
             reader.readAsDataURL(file);
+
+            // 사진을 바꾸면 수정하기 버튼 활성화
+            saveBtn.classList.add("active");
+            saveBtn.disabled = false;
         }
     });
 
