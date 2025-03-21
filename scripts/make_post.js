@@ -1,6 +1,6 @@
 const titleInput = document.getElementById("post-title");
 const contentInput = document.getElementById("post-content");
-const submitBtn = document.getElementById("submit-btn");
+const saveBtn = document.getElementById("submit-btn");
 const imageUpload = document.getElementById("image-upload");
 
 //헬퍼 메시지
@@ -9,13 +9,13 @@ const contentInputHelper = document.getElementById("content-input-helper");
 // 유효성 검사
 function validateInputs() {
     if (titleInput.value.trim() !== "" && contentInput.value.trim() !== "") {
-        submitBtn.classList.add("active");
-        submitBtn.disabled = false;
+        saveBtn.classList.add("active");
+        saveBtn.disabled = false;
 
         contentInputHelper.style.display = "none";
     } else {
-        submitBtn.classList.remove("active");
-        submitBtn.disabled = true;
+        saveBtn.classList.remove("active");
+        saveBtn.disabled = true;
 
         contentInputHelper.textContent = "*제목, 내용을 모두 작성해주세요.";
         contentInputHelper.style.display = "block";
@@ -51,7 +51,7 @@ imageUpload.addEventListener("change", function () {
 });
 
 // 게시글 등록 버튼 클릭 이벤트
-submitBtn.addEventListener("click", function () {
+saveBtn.addEventListener("click", function () {
     if (titleInput.value.trim() === "" || contentInput.value.trim() === "") {
         alert("제목과 내용을 모두 작성해주세요.");
         return;
@@ -60,8 +60,8 @@ submitBtn.addEventListener("click", function () {
     titleInput.value = "";
     contentInput.value = "";
     imageUpload.innerHTML = "";
-    submitBtn.classList.remove("active");
-    submitBtn.disabled = true;
+    saveBtn.classList.remove("active");
+    saveBtn.disabled = true;
     window.location.href = "post.html"; // 게시글 목록 페이지로 이동
 });
 
