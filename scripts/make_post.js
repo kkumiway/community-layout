@@ -36,20 +36,6 @@ titleInput.addEventListener("input", function () {
 // 본문 입력 감지
 contentInput.addEventListener("input", validateInputs);
 
-// 이미지 업로드 처리
-imageUpload.addEventListener("change", function () {
-    const file = this.files[0];
-    if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-            imagePreview.innerHTML = `<img src="${e.target.result}" style="max-width: 100%; border-radius: 5px;">`;
-        };
-        reader.readAsDataURL(file);
-    } else {
-        imagePreview.innerHTML = "";
-    }
-});
-
 // 게시글 등록 버튼 클릭 이벤트
 saveBtn.addEventListener("click", function () {
     if (titleInput.value.trim() === "" || contentInput.value.trim() === "") {
