@@ -84,7 +84,7 @@ button:disabled {
 }
 
 
-.profile-container {
+.profile-section {
     display: flex;
     justify-content: center;
     align-items: center;
