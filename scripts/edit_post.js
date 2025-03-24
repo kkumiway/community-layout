@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const titleInput = document.getElementById("post-title");
     const contentInput = document.getElementById("post-content");
     const saveBtn = document.getElementById("save-btn");
+    const imageUpload = document.getElementById("image-upload");
+    const previewImage = document.getElementById("preview-image");
+
+    // 헬퍼 메시지
     const contentInputHelper = document.getElementById("content-input-helper");
     
     // URL에서 데이터 가져오기
@@ -15,7 +19,28 @@ document.addEventListener("DOMContentLoaded", function () {
     // 가져온 데이터를 입력 필드에 채우기
     document.getElementById("post-title").value = title;
     document.getElementById("post-content").value = content;
-    document.getElementById("preview-image").src = imageSrc;
+    previewImage.src = imageSrc; // 이미지를 미리보기에 설정
+
+    // 비동기 함수로 이미지 불러오기 처리
+    async function loadImage() {
+        try {
+            const response = await fetch(imageSrc);
+            const blob = await response.blob();
+
+            const fileName = imageSrc.split('/').pop(); // 파일명 추출
+            const myFile = new File([blob], fileName, { type: blob.type });
+
+            // DataTransfer를 이용하여 input[type="file"] 값 설정
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(myFile);
+            imageUpload.files = dataTransfer.files;
+        } catch (error) {
+            console.error("이미지 파일을 불러오는 중 오류 발생:", error);
+        }
+    }
+
+    // 비동기 함수 실행
+    loadImage();
 
     // 유효성 검사
     function validateInputs() {
@@ -39,6 +64,22 @@ document.addEventListener("DOMContentLoaded", function () {
             this.value = this.value.slice(0, 26);
         }
         validateInputs();
+    });
+
+    // 이미지 업로드 시 미리보기 변경(사실 미리보기는 display: none임)
+    imageUpload.addEventListener("change", function () {
+        const file = imageUpload.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                previewImage.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+
+            // 사진을 바꾸면 수정하기 버튼 활성화
+            saveBtn.classList.add("active");
+            saveBtn.disabled = false;
+        }
     });
 
     // 본문 입력 감지

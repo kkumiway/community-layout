@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원정보 수정</title>
+    <link rel="stylesheet" href="../styles/edit_profile.css">
+    <link rel="stylesheet" href="../styles/header.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <div id="header-placeholder"></div>
+
+    <div class="container">
+        <h2>회원정보 수정</h2>
+
+        <!-- 프로필 사진 변경 -->
+        <label for="profile-section">프로필 사진*</label>
+        <div class="profile-section">
+            <label for="profile-pic" class="profile-pic-label">
+                <input type="file" id="profile-pic" accept="image/*" onchange="previewImage(event)" />
+                <div id="image-preview" class="image-preview">
+                    <img id="profile-image" alt="프로필 사진">
+                    <p class="text">변경</p>
+                </div>
+            </label>
+        </div>
+
+        <!-- 이메일 -->
+        <label for="email">이메일*</label>
+        <input type="email" id="email" disabled>
+
+        <!-- 닉네임 -->
+        <label for="nickname">닉네임*</label>
+        <input type="text" id="nickname" placeholder="닉네임 입력 (최대 10자)">
+        <p class="helper-text" id="nickname-helper"></p>
+        <p class="error-message" id="nickname-error" ></p>
+
+        <!-- 수정하기 & 회원탈퇴 -->
+        <button id="update-btn" disabled>수정하기</button>
+        <button id="delete-btn">회원 탈퇴</button>
+    </div>
+
+    <!-- 수정 완료 메시지 -->
+    <div id="toast-message">수정 완료!</div>
+
+    <!-- 회원탈퇴 확인 모달 -->
+    <div id="delete-modal" class="hidden">
+        <div class="modal-content">
+            <h2>회원 탈퇴하시겠습니까?</h2>
+            <p>탈퇴 후 복구할 수 없습니다.</p>
+            <button class="modal-cancel-btn" id="modal-cancel-delete">취소</button>
+            <button class="modal-confirm-btn" id="modal-confirm-delete">확인</button>
+        </div>
+    </div>
+
+    <script src="../scripts/layout.js"></script>
+    <script src="../scripts/edit_profile.js"></script>
+</body>
+</html>

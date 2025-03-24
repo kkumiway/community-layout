@@ -27,7 +27,7 @@
 /* 헤더 버튼 스타일 */
 .header-button {
     position: absolute;
-    left: 30%;
+    left: 40%;
     transform: translateX(-50%);
     background: none;
     border: none;
@@ -36,5 +36,55 @@
     color: black;
     cursor: pointer;
     padding: 5px;
+}
+
+/* 프로필 버튼 컨테이너 */
+.profile-container {
+    position: absolute;
+    right: 40%;
+    transform: translateX(50%);
+}
+
+/* 프로필 이미지 버튼 */
+.profile-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    object-fit: cover;
+}
+
+/* 드롭다운 메뉴 */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 0;
+    background-color: #f0f0f0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    width: 140px;
+    text-align: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+/* 드롭다운 버튼 스타일 */
+.dropdown-menu button {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+    color: black;
+    box-sizing: border-box;
+}
+
+.dropdown-menu button:hover {
+    background-color: #7F6AEE;
+    color: white;
 }
 

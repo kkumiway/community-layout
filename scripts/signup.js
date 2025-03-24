@@ -90,7 +90,7 @@ function validateInputs() {
     }else{
         passwordHelper.style.display = "none";
         if (!validatePassword(password)) {
-            passwordError.textContent = "*비밀번호는 8자 이상, 20자 이하이며, 대문자, 소문자, 숫자, 특수문자를 각각 최고 1개 포함해야 합니다.";
+            passwordError.textContent = "*비밀번호는 8자 이상, 20자 이하이며, 대문자, 소문자, 숫자, 특수문자를 각각 최소 1개 포함해야 합니다.";
             passwordError.style.display = "block"; // 오류 메시지 보이기
             isValid = false;
         } else {
