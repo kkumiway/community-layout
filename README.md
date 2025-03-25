@@ -63,6 +63,11 @@
 ```  
 <br/><br/>
 
+## 📽️ 커뮤니티 레이아웃 미리보기
+👉🏻 [링크] (https://incongruous-soil-3de.notion.site/1c161094f689805584bbdd74c9233eab?pvs=4)
+
+<br/><br/>
+
 ## 🧪 실행 방법
 
 1. GitHub에서 클론
@@ -72,4 +77,3 @@ git clone https://github.com/kkumiway/community-page.git
 ```
 
 2. Live Server 또는 브라우저에서 index.html 열기  
-
