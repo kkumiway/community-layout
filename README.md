@@ -15,7 +15,7 @@
 
 ## 🧱 기술 스택
 
-| 구분 | 기술 |
+| 구분 | 기술 | 
 |------|------|
 | Frontend | HTML, CSS, JavaScript |
 | REST API | JSON 기반 설계 |
@@ -62,6 +62,11 @@
  │    ├── signup.js
  └─ 📜 README.md
 ```  
+<br/><br/>
+
+## 🔭 REST API 설계
+
+[👉🏻 스프레드시트 페이지로 이동](https://docs.google.com/spreadsheets/d/19IezY9KrBywdCIKKGkPRzmGNrMLHdYK-HgXVHNEyB4E/edit?gid=1878554884#gid=1878554884)
 <br/><br/>
 
 ## 📽️ 커뮤니티 레이아웃 미리보기
