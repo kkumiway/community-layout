@@ -77,4 +77,4 @@
 git clone https://github.com/kkumiway/community-page.git
 ```
 
-2. Live Server 또는 브라우저에서 index.html 열기  
+2. Live Server 또는 브라우저에서 login.html 열기  
