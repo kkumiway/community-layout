@@ -19,8 +19,9 @@
 |------|------|
 | Frontend | HTML, CSS, JavaScript |
 | REST API | JSON 기반 설계 |
-| 호환성 | Chrome, Firefox, Safari |  
-<br/><br/>
+| 호환성 | Chrome, Firefox, Safari |    
+
+  <br/><br/>
 
 ## 🔗 폴더 구조
 
