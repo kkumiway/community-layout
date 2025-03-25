@@ -20,8 +20,8 @@
 | Frontend | HTML, CSS, JavaScript |
 | REST API | JSON 기반 설계 |
 | 호환성 | Chrome, Firefox, Safari |  
-<br/><br/>
 
+<br/><br/>
 ## 🔗 폴더 구조
 
 ```
@@ -64,7 +64,8 @@
 <br/><br/>
 
 ## 📽️ 커뮤니티 레이아웃 미리보기
-👉🏻 [링크] (https://incongruous-soil-3de.notion.site/1c161094f689805584bbdd74c9233eab?pvs=4)
+
+[👉🏻 노션 페이지로 이동](https://incongruous-soil-3de.notion.site/1c161094f689805584bbdd74c9233eab?pvs=4)
 
 <br/><br/>
 
