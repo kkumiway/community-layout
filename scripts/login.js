@@ -59,6 +59,6 @@ passwordInput.addEventListener("input", validateInputs);
 loginButton.addEventListener("click", function() {
     if (!loginButton.disabled) {
         alert("로그인 성공! 게시판으로 이동합니다.");
-        window.location.href = "post.html"; // 게시글 목록 페이지로 이동
+        window.location.href = "posts.html"; // 게시글 목록 페이지로 이동
     }
 });

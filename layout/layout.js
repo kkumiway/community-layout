@@ -25,16 +25,16 @@ function setupProfileDropdown() {
 
 // 기능 함수 (클릭 시 실행할 함수들)
 function editProfile() {
-    alert("회원정보 수정 페이지로 이동");
-    window.location.href = "/edit-profile.html";
+    alert("회원정보 수정 페이지로 이동합니다.");
+    window.location.href = "edit_profile.html";
 }
 
 function changePassword() {
-    alert("비밀번호 수정 페이지로 이동");
-    window.location.href = "/change-password.html";
+    alert("비밀번호 수정 페이지로 이동합니다.");
+    window.location.href = "edit_password.html";
 }
 
 function logout() {
     alert("로그아웃되었습니다.");
-    window.location.href = "/login.html";
+    window.location.href = "login.html";
 }

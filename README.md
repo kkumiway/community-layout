@@ -1,8 +1,7 @@
 # 🗣️ 아무 말 대잔치 - 커뮤니티 서비스
 
 사용자들이 자유롭게 글을 작성하고, 댓글을 달고, 소통할 수 있는 커뮤니티 웹 서비스입니다.
-
----
+<br/><br/>
 
 ## 📌 주요 기능
 
@@ -12,8 +11,7 @@
 - 💬 댓글 작성 / 수정 / 삭제
 - ❤️ 게시글 좋아요 / 취소
 - 👤 회원 정보 수정 / 비밀번호 수정 / 회원 탈퇴
-
----
+<br/><br/>
 
 ## 🧱 기술 스택
 
@@ -21,8 +19,8 @@
 |------|------|
 | Frontend | HTML, CSS, JavaScript |
 | REST API | JSON 기반 설계 |
-| 호환성 | Chrome, Firefox, Safari |
-
+| 호환성 | Chrome, Firefox, Safari |  
+<br/><br/>
 
 ## 🔗 폴더 구조
 
@@ -62,7 +60,13 @@
  │    ├── posts.js
  │    ├── signup.js
  └─ 📜 README.md
-```
+```  
+<br/><br/>
+
+## 📽️ 커뮤니티 레이아웃 미리보기
+👉🏻 [링크] (https://incongruous-soil-3de.notion.site/1c161094f689805584bbdd74c9233eab?pvs=4)
+
+<br/><br/>
 
 ## 🧪 실행 방법
 
@@ -72,8 +76,4 @@
 git clone https://github.com/kkumiway/community-page.git
 ```
 
-2. Live Server 또는 브라우저에서 index.html 열기
-
-## 📝 License
-
-이 프로젝트는 MIT 라이선스를 따릅니다.
+2. Live Server 또는 브라우저에서 index.html 열기  
