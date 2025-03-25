@@ -21,7 +21,6 @@
 | REST API | JSON 기반 설계 |
 | 호환성 | Chrome, Firefox, Safari |  
 
-<br/><br/>
 ## 🔗 폴더 구조
 
 ```
@@ -61,13 +60,11 @@
  │    ├── signup.js
  └─ 📜 README.md
 ```  
-<br/><br/>
 
 ## 📽️ 커뮤니티 레이아웃 미리보기
 
 [👉🏻 노션 페이지로 이동](https://incongruous-soil-3de.notion.site/1c161094f689805584bbdd74c9233eab?pvs=4)
 
-<br/><br/>
 
 ## 🧪 실행 방법
 
